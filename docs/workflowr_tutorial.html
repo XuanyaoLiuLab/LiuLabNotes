@@ -527,15 +527,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomXuanyaoLiuLabLiuLabNotestree7a412fe409b76618c1b6ffead2eb83051c18af6btargetblank7a412fea">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomXuanyaoLiuLabLiuLabNotestreec39f5c075a8b8df05f1ce53baeeac87c95e91a21targetblankc39f5c0a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/XuanyaoLiuLab/LiuLabNotes/tree/7a412fe409b76618c1b6ffead2eb83051c18af6b" target="_blank">7a412fe</a>
+<a href="https://github.com/XuanyaoLiuLab/LiuLabNotes/tree/c39f5c075a8b8df05f1ce53baeeac87c95e91a21" target="_blank">c39f5c0</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomXuanyaoLiuLabLiuLabNotestree7a412fe409b76618c1b6ffead2eb83051c18af6btargetblank7a412fea"
+id="strongRepositoryversionstrongahrefhttpsgithubcomXuanyaoLiuLabLiuLabNotestreec39f5c075a8b8df05f1ce53baeeac87c95e91a21targetblankc39f5c0a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -545,7 +545,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/XuanyaoLiuLab/LiuLabNotes/tree/7a412fe409b76618c1b6ffead2eb83051c18af6b" target="_blank">7a412fe</a>.
+<a href="https://github.com/XuanyaoLiuLab/LiuLabNotes/tree/c39f5c075a8b8df05f1ce53baeeac87c95e91a21" target="_blank">c39f5c0</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -559,7 +559,9 @@ depends on. Below is the status of the Git repository when the results
 were generated:
 </p>
 <pre><code>
-working directory clean
+Unstaged changes:
+    Modified:   README.md
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not
@@ -604,6 +606,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/XuanyaoLiuLab/LiuLabNotes/blob/c39f5c075a8b8df05f1ce53baeeac87c95e91a21/analysis/workflowr_tutorial.Rmd" target="_blank">c39f5c0</a>
+</td>
+<td>
+1onic
+</td>
+<td>
+2022-07-20
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/XuanyaoLiuLab/LiuLabNotes/1539a94e76f0e2bdf6c4b7f748726ca1a2ec2fe8/docs/workflowr_tutorial.html" target="_blank">1539a94</a>
+</td>
+<td>
+1onic
+</td>
+<td>
+2022-07-20
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -801,63 +837,6 @@ git commit --all</code></pre>
 <li>Push changes/checkout developmental branch</li>
 </ol>
 <pre><code>git push -u origin master</code></pre>
-</div>
-</div>
-<div id="industry-best-practices" class="section level2">
-<h2>Industry Best Practices</h2>
-<p>This section outline best practices to follow when there are multiple
-people working on a github repository at once. In our example and
-generally for workflowR, this is not necessary since logs are
-<em>typically</em> unique to each lab member. But sometimes that is not
-the case, for example, when multiple people are working on a new R
-package that may use workflowR pages to demonstrate
-usage/tutorials/notes or when multiple lab members want to combine
-workflowR notes.</p>
-<p>The group repository should be set up such that a single/or all
-people can approve the PR in step 11.</p>
-<ol style="list-style-type: decimal">
-<li>After you’ve selected a feature to work on, create a branch in your
-local repo to build it in.
-<ul>
-<li><code>$ git checkout -b username/short_description_of_feature</code></li>
-</ul></li>
-<li>Implement the requested feature, make sure all tests are passing,
-and commit all changes in the new branch.</li>
-<li>Checkout the master branch locally.
-<ul>
-<li><code>$ git checkout master</code></li>
-</ul></li>
-<li>Pull down the master branch from GitHub to get the most up to date
-changes from others. If you practice git workflow as described here you
-should never have a merge conflict at this step.
-<ul>
-<li><code>$ git pull origin master</code></li>
-</ul></li>
-<li>Make sure all tests are passing on master and then checkout your new
-branch.
-<ul>
-<li><code>$ git checkout username/short_description_of_feature</code></li>
-</ul></li>
-<li>From your new branch, merge in your local master branch.
-<ul>
-<li><code>$ git merge master</code></li>
-</ul></li>
-<li>Resolve any merge conflicts, make sure all tests are passing on the
-new branch, and then commit all changes from the merge.
-<ul>
-<li><code>$ git add .</code></li>
-<li><code>$ git commit -m "Merge in master."</code></li>
-</ul></li>
-<li>Push the feature branch to the remote repo.
-<ul>
-<li><code>git push --set-upstream origin username/short_description_of_feature</code></li>
-</ul></li>
-<li>Submit a pull request on GitHub asking to merge the branch into
-master.</li>
-<li>A teammate reviews the code for quality and functionality.</li>
-<li>The teammate merges the pull request and deletes your branch from
-GitHub.</li>
-</ol>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -899,6 +878,7 @@ loaded via a namespace (and not attached):
 [33] rmarkdown_2.13   callr_3.7.0      magrittr_2.0.3   whisker_0.4     
 [37] ps_1.6.0         promises_1.2.0.1 htmltools_0.5.2  ellipsis_0.3.2  
 [41] httpuv_1.6.5     utf8_1.2.2       stringi_1.7.6    crayon_1.5.1    </code></pre>
+</div>
 </div>
 </div>
 
