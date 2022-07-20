@@ -1,5 +1,5 @@
 ---
-title: "**Research Progress Template (Liu Lab)**"
+title: "Liu Lab Notes"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -12,12 +12,11 @@ editor_options:
 ![](index_image.jpeg){width=100%}
 </center>
 
-
 ## Welcome
 
-Welcome to my research website.
-
+Welcome to the Liu Lab research website.
 
 ## Topics
 
-- Progress in 2022. [click](2022.html)
+- WorkflowR tutorial. [click](workflowr_tutorial.html)
+

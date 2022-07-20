@@ -1,0 +1,171 @@
+---
+title: 'WorkflowR Tutorial'
+output:
+  workflowr::wflow_html:
+              toc: true
+              toc_depth: 4
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+```{css style settings, echo = FALSE}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    border-left: 5px solid #eee;
+}
+```
+
+## Setting up workflowR on Midway3/Midway2
+
+The point of this short memo is to go over requirements, setting up, and working on a workflowR environment using a template from our Lab group. 
+
+### First Step: Installing Environment
+
+In order to run workflowR, you need to first setup a working environment for the template. In order to do this we will use conda/miniconda.
+
+A) Create a env.yaml file:
+
+  ```
+  name: workflowr
+  channels:
+    - conda-forge
+    - bioconda
+    - defaults
+  dependencies:
+    - python>=3.7
+    - mamba
+    - r-workflowr
+    - r-base
+    - gh
+    - r-data.table
+    - r-tidyverse
+  ```
+
+B) Create the conda enviroment with the config above (assuming conda is setup):
+
+  ```
+  conda env create -f path/to/env.yaml
+  ```
+
+### Second Step: Configuring the Environment
+
+  The goal of this step is now to configuring your environement to your Github account and setup Github pages.
+
+  ```
+  conda activate workflowr
+  ```
+
+A) Clone template and check Github pages:
+
+  Prior to cloning the github template, create a new github repositoyry under your account. For example we will create: "MyworkflowR" repository. Make sure to enable Github pages for your repository [here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+  Then, clone the repo, re-initialize it, and change the origin remote to point to your new repository. 
+
+  ```
+  mkdir -p path/to/folder
+  cd path/to/folder
+  git clone https://github.com/XuanyaoLiuLab/wflowr_template.git
+  cd wflowr_template
+  git init
+  git remote set-url origin https://github.com/USERNAME/MyworkflowR.git
+  ```
+  This should transfer over the origin for the cloned template over to the new repository you just created: "MyworkflowR", in your github account USERNAME. 
+
+B) Personal Access Tokens:
+
+  It is now time to setup git with our personal access tokens.
+
+  Go to your account settings [here](https://github.com/settings/tokens). Create a new token to use with this enviroment. Copy this token temporarily.
+
+  The token should look like this:
+  ```
+  ghp_cgq4ZrHmFu0lLNl7ajKAwgNPnT5zhF00000
+  ```
+
+### Third Step: Pushing First Update
+
+  This next step is aimed at publishing our cloned template to our new repository: "MyworkflowR". The workflowR template was made by Lili in our lab group.
+
+  ```
+  git push -u origin master
+  ```
+
+  Normally this will be the way you update your workflowr to Github. If you have not logged in before using the CLI/git, you will be prompted for a username and password:
+
+  ```
+  $ git push -u origin master
+  Username: <your-username>
+  Password: <your-token>
+  ```
+
+  Here enter your username and token from above. These will be cached for later. Here are some optional troubleshooting commands:
+
+  ```
+  git config --global credential.https://github.com.username USERNAME
+  git config --global user.name "USERNAME"
+  git config --global user.email "0000000+USERNAME@users.noreply.github.com"
+  ```
+
+### (Example Modification) Fourth Step: Modyfying .RMD inside Template
+
+This step is not necessary but aims to give an example where we modify a workflowR page (.RMD), then upload and publish our page to our new workflowR.
+
+A) First make changes to the .RMD markdown file in wflowr_template/analysis*. For example, we add a figure and a table.
+
+B) Run wflow_publish in order to build HTML pages + commit pages from all .RMDs in analysis folder.
+
+  In R terminal:
+
+  ```
+  library("workflowr")
+  setwd('path/to/folder/wflowr_template')
+  wflow_publish("analysis/*.Rmd", "update", republish = TRUE)
+  ```
+
+C) Git add and commit any additional files, such as the figures, tables, etc.
+
+  ```
+  git add data/table.csv
+  git add docs/figureA.png
+  git commit --all
+  ```
+
+D) Push changes/checkout developmental branch
+
+  ```
+  git push -u origin master
+  ```
+
+## Industry Best Practices
+
+This section outline best practices to follow when there are multiple people working on a github repository at once. In our example and generally for workflowR, this is not necessary since logs are *typically* unique to each lab member. But sometimes that is not the case, for example, when multiple people are working on a new R package that may use workflowR pages to demonstrate usage/tutorials/notes or when multiple lab members want to combine workflowR notes.
+
+The group repository should be set up such that a single/or all people can approve the PR in step 11.
+
+  1. After you've selected a feature to work on, create a branch in your local repo to build it in.
+      * `$ git checkout -b username/short_description_of_feature`
+  2. Implement the requested feature, make sure all tests are passing, and commit all changes in the new branch.
+  3. Checkout the master branch locally.
+      * `$ git checkout master`
+  4. Pull down the master branch from GitHub to get the most up to date changes from others. If you practice git workflow as described here you should never have a merge conflict at this step.
+      * `$ git pull origin master`
+  5. Make sure all tests are passing on master and then checkout your new branch.
+      * `$ git checkout username/short_description_of_feature`
+  6. From your new branch, merge in your local master branch.
+      * `$ git merge master`
+  7. Resolve any merge conflicts, make sure all tests are passing on the new branch, and then commit all changes from the merge.
+      * `$ git add .`
+      * `$ git commit -m "Merge in master."`
+  8. Push the feature branch to the remote repo.
+      * `git push --set-upstream origin username/short_description_of_feature`
+  9. Submit a pull request on GitHub asking to merge the branch into master.
+  10. A teammate reviews the code for quality and functionality.
+  11. The teammate merges the pull request and deletes your branch from GitHub.
+
+
+

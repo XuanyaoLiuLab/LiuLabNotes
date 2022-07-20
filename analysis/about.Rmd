@@ -7,5 +7,5 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+This website is powered by workflowR and serves notes for lab members. 
 
