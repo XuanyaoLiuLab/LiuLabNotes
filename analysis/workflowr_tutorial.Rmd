@@ -23,7 +23,7 @@ blockquote {
 
 ## Setting up workflowR on Midway3/Midway2
 
-The point of this short memo is to go over requirements, setting up, and working on a workflowR environment using a template from our Lab group. 
+The point of this short memo is to go over requirements, setting up, and working on a workflowR environment using a template made by Lili from our lab group. 
 
 ### First Step: Installing Environment
 
@@ -63,8 +63,8 @@ B) Create the conda enviroment with the config above (assuming conda is setup):
 
 A) Clone template and check Github pages:
 
-  Prior to cloning the github template, create a new github repositoyry under your account. For example we will create: "MyworkflowR" repository. Make sure to enable Github pages for your repository [here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-  Then, clone the repo, re-initialize it, and change the origin remote to point to your new repository. 
+  Prior to running the commands below, create a new github repository under your account. For example we will create: "MyworkflowR" repository. Make sure to enable Github pages for your newly created repository [here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+  Then, proceed with the commands below. Clone the template repo, re-initialize it, and change the origin remote to point to your new repository. The template was made by Lili.
 
   ```
   mkdir -p path/to/folder
