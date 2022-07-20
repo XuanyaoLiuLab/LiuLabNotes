@@ -11,7 +11,7 @@ This repository contains a workflowR setup.
 mkdir -p path/to/store/labwebsite
 cd path/to/store/labwebsite
 git clone https://github.com/XuanyaoLiuLab/LiuLabNotes.git
-cd LiuLabWorkflowR
+cd LiuLabNotes
 ```
 
 If you are have not yet setup workflowr, see the 'WorkflowR Tutorial' for step-by-step instructions on setting up an environment on either your local machine or Midway3/Midway2.
