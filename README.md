@@ -15,3 +15,7 @@ cd LiuLabNotes
 ```
 
 If you have not yet setup workflowr, see the 'WorkflowR Tutorial' for step-by-step instructions on setting up an environment on either your local machine or Midway3/Midway2.
+
+## Link to lab website pages:
+### [live](https://xuanyaoliulab.github.io/LiuLabNotes/)
+
