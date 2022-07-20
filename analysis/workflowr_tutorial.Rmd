@@ -111,7 +111,7 @@ B) Personal Access Tokens:
   git config --global user.email "0000000+USERNAME@users.noreply.github.com"
   ```
 
-### (Example Modification) Fourth Step: Modyfying .RMD inside Template
+### (Example Modification) Fourth Step: Modifying .RMD inside Template
 
 This step is not necessary but aims to give an example where we modify a workflowR page (.RMD), then upload and publish our page to our new workflowR.
 
