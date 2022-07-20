@@ -1,32 +1,17 @@
-# Research Progress Website
-
-A [workflowr][] project template for keeping track of your research progress.
-
+# Liu Lab Notes
 
 [workflowr]: https://github.com/workflowr/workflowr
 [Liu Lab]: https://liulab.uchicago.edu/
 
+This repository contains a workflowR setup. 
 
-## To use this repo
+## In order to get started:
 
 ```
-git clone https://github.com/XuanyaoLiuLab/wflowr_template.git
-cd wflowr_template
+mkdir -p path/to/store/labwebsite
+cd path/to/store/labwebsite
+git clone https://github.com/XuanyaoLiuLab/LiuLabNotes.git
+cd LiuLabWorkflowR
 ```
 
-## Notes
-
-- Website
-
-  The rendered website would be
-  `https://your_github_user_name.github.io/wflowr_template/`.
-  
-  For this repo, the site would be `https://xuanyaoliulab.github.io/wflowr_template/`.
-
-- Enable GitHub Pages on the repo
-
-  Follow [steps here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-  
-  Basically, `Settings-Pages-main-docs`.
-
-
+If you are have not yet setup workflowr, see the 'WorkflowR Tutorial' for step-by-step instructions on setting up an environment on either your local machine or Midway3/Midway2.
