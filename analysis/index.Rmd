@@ -14,7 +14,7 @@ editor_options:
 
 ## Welcome
 
-Welcome to the Liu Lab website.
+Welcome to the Liu Lab research resources website, which contains resources for best practices to perform dry-lab research
 
 ## Topics
 
