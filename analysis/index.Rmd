@@ -22,5 +22,12 @@ Welcome to the Liu Lab research resources website, which contains resources for 
 
     + basic WorkflowR tutorial. [click](https://workflowr.github.io/workflowr/articles/wflow-09-workshop.html)
 
-    + build your own research website. [click](workflowr_tutorial.html)
+    + build your research website to document research progress. [click](workflowr_tutorial.html)
+
+* Data visualization
+    + Read "Nature Collections: Visual Strategies for Biological Data"
+
+* Snakemake
+
+    + basic snakemake tutorial. [click] (https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)    
 
