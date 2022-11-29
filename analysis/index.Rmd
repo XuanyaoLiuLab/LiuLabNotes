@@ -18,9 +18,9 @@ Welcome to the Liu Lab research resources website, which contains resources for 
 
 ## Topics
 
-WorkflowR
+|. WorkflowR
 
-  basic WorkflowR tutorial. [click](https://workflowr.github.io/workflowr/articles/wflow-09-workshop.html)
+|  basic WorkflowR tutorial. [click](https://workflowr.github.io/workflowr/articles/wflow-09-workshop.html)
 
-  build your own research website. [click](workflowr_tutorial.html)
+|. build your own research website. [click](workflowr_tutorial.html)
 
